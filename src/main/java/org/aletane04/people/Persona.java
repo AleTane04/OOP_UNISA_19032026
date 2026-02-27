@@ -108,5 +108,19 @@ public class Persona implements Comparable<Persona>, Serializable
         return this.nome.compareTo(p.nome);
     }
 
+    @Override
+    public String toString()
+    {
+        StringBuffer sb = new StringBuffer();
+        sb.append("* - - - Anagrafica Persona - - - *\n");
+        sb.append("Nome: " + nome + "\n");
+        sb.append("Cognome: " + cognome + "\n");
+        sb.append("Codice Fiscale: " + codiceFiscale + "\n");
+        sb.append("Data di nascita: " + dataNascita + "\n");
+        sb.append("Numero progressivo: " + number + "\n");
+        return sb.toString();
+    }
+
+
 
 }
