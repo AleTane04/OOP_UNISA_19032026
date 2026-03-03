@@ -1,5 +1,19 @@
 package org.aletane04.people.caratterizzazioni.docenza;
 
-public class Docente
+import org.aletane04.people.PersonaUniversità;
+
+public abstract class Docente extends PersonaUniversità
 {
+
+
+
+
+
+
+
+    @Override
+    public String getRuolo()
+    {
+        return "Studente";
+    }
 }
