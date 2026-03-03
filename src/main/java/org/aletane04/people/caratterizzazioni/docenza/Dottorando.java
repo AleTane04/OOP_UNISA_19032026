@@ -9,7 +9,7 @@ public class Dottorando extends Docente
 
     public Dottorando(String nome, String cognome, LocalDate dataNascita, String codiceFiscale, String matricola, String formazione, double stipendio, String campoDiRicerca)
     {
-        super(nome,cognome,dataNascita,codiceFiscale,matricola,formazione,stipendio - 10.0 + ChronoUnit.DAYS.between(LocalDate.of(03,03,2026), LocalDate.now()));
+        super(nome,cognome,dataNascita,codiceFiscale,matricola,formazione,stipendio - 10.0 + ChronoUnit.DAYS.between(LocalDate.of(2026,03,01), LocalDate.now()));
         this.campoDiRicerca=campoDiRicerca;
     }
 
@@ -26,7 +26,7 @@ public class Dottorando extends Docente
     @Override
     public String getRuolo()
     {
-        return "Dottorando che lavora nell'ambito di: " + campoDiRicerca + "\n";
+        return "Dottorando che lavora nell'ambito di: " + campoDiRicerca;
     }
 
     @Override
