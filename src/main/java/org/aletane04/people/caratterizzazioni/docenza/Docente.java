@@ -8,13 +8,16 @@ public abstract class Docente extends PersonaUniversità
 {
     private String formazione;
     private double stipendio;
-    public Docente(String nome, String cognome, LocalDate dataNascita, String codiceFiscale, String matricola, String f, double stipendio)
+    public Docente(String nome, String cognome, LocalDate dataNascita, String codiceFiscale, String matricola, String formazione, double stipendio)
     {
         super(nome, cognome, dataNascita, codiceFiscale, matricola);
         this.stipendio = stipendio;
-        this.formazione=formazione;
+        this.formazione = formazione;
     }
-    public abstract double getStipendio();
+    public double getStipendio()
+    {
+        return stipendio;
+    }
 
     public String getFormazione()
     {
@@ -29,14 +32,14 @@ public abstract class Docente extends PersonaUniversità
     @Override
     public String getRuolo()
     {
-        return "Studente";
+        return "Docente";
     }
 
     @Override
     public String toString()
     {
         StringBuffer sb = new StringBuffer(super.toString());
-        sb.append("Università in cui ha studiato: " + formazione + "\n");
+        sb.append("Università in cui ha studiato: " + getFormazione() + "\n");
         sb.append("Stipendio: " + getStipendio() + "\n");
         return sb.toString();
     }

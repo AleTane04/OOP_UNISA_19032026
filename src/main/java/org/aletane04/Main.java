@@ -1,6 +1,8 @@
 package org.aletane04;
 import org.aletane04.*;
 import org.aletane04.people.Persona;
+import org.aletane04.people.caratterizzazioni.docenza.*;
+import org.aletane04.people.caratterizzazioni.docenza.DocenteDiRuolo;
 
 import java.time.LocalDate;
 
@@ -11,5 +13,9 @@ public class Main {
     {
         Persona p1 = new Persona("Giovanni", "Persone", LocalDate.of(2004,07,22), "PETRGVN20040722SANOCK");
         System.out.print(p1.toString());
+
+        //String nome, String cognome, LocalDate dataNascita, String codiceFiscale, String matricola, String formazione, double stipendio, LocalDate arruolamento
+        Docente d1 = new DocenteDiRuolo("Giovanni","Petrone",LocalDate.of(1960,01,01), "PTRNGVN19600302ROCK", "06127089989", "Università di Napoli", 2000, LocalDate.of(2009,8,19));
+        System.out.println(d1.toString());
     }
 }

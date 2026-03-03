@@ -6,11 +6,10 @@ import java.time.temporal.*;
 public class DocenteDiRuolo extends Docente
 {
     private LocalDate arruolamento;
-    private double stipendioBase;
-    public DocenteDiRuolo(String nome, String cognome, LocalDate dataNascita, String codiceFiscale, String matricola, String d, double stipendio, LocalDate arruolamento)
+
+    public DocenteDiRuolo(String nome, String cognome, LocalDate dataNascita, String codiceFiscale, String matricola, String formazione, double stipendio, LocalDate arruolamento)
     {
-        super(nome, cognome, dataNascita, codiceFiscale, matricola,d, stipendio);
-        stipendioBase=stipendio;
+        super(nome, cognome, dataNascita, codiceFiscale, matricola,formazione, stipendio*3.0/2.0+1.0/10.0*ChronoUnit.DAYS.between(arruolamento, LocalDate.now()));
         this.arruolamento = arruolamento;
     }
 
@@ -25,9 +24,17 @@ public class DocenteDiRuolo extends Docente
     }
 
     @Override
-    public double getStipendio()
+    public String getRuolo()
     {
-        return stipendioBase*3.0/2.0+1.0/10.0*ChronoUnit.DAYS.between(arruolamento, LocalDate.now())
+        return "Docente di ruolo";
+    }
+
+    @Override
+    public String toString()
+    {
+        StringBuffer sb = new StringBuffer(super.toString());
+        sb.append("Data di insediamento: " + arruolamento + "\n");
+        return sb.toString();
     }
 
 
