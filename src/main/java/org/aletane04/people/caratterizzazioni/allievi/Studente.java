@@ -1,5 +1,6 @@
 package org.aletane04.people.caratterizzazioni.allievi;
 
+import org.aletane04.people.Persona;
 import org.aletane04.people.PersonaUniversità;
 
 import java.time.LocalDate;
@@ -43,6 +44,20 @@ public abstract  class Studente extends PersonaUniversità
     public String getRuolo()
     {
         return "Studente";
+    }
+
+    @Override
+    public int compareTo(Persona p)
+    {
+        int res = super.compareTo(p);
+        if(res == 0 && (p instanceof Studente))
+        {
+            Studente s = (Studente) p;
+            Double d1 = this.mediaPonderata;
+            Double d2 = s.getMediaPonderata();
+            return d1.compareTo(d2);
+        }
+        return res;
     }
 
     @Override

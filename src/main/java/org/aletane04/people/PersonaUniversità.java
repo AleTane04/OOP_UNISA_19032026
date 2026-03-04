@@ -1,5 +1,7 @@
 package org.aletane04.people;
 
+import org.aletane04.people.caratterizzazioni.allievi.Studente;
+
 import java.time.LocalDate;
 
 public abstract class PersonaUniversità extends Persona
@@ -22,6 +24,8 @@ public abstract class PersonaUniversità extends Persona
     }
 
     public abstract String getRuolo();
+
+
 
     @Override
     public String toString()
