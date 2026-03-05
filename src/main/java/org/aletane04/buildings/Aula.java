@@ -102,6 +102,11 @@ public class Aula implements Comparable<Aula>
         sb.append("Capienza: " + capienza + " posti\n");
         sb.append("Numero di persone: " + numeroPersone + " persone\n");
         sb.append("Posti residui: " + postiResidui + " posti\n");
+        sb.append("*-PERSONE PRESENTI IN AULA-*\n");
+        for(Persona p : miaAula)
+        {
+            sb.append(p);
+        }
         return sb.toString();
     }
 }

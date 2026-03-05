@@ -24,6 +24,9 @@ public class Main {
         System.out.println(d2.toString());
 
         Aula a1 = new Aula("H", 250);
+        a1.addPersona(p1);
+        a1.addPersona(d1);
+        a1.addPersona(d2);
         //System.out.println(a1.toString());
 
         //public Edificio(String id, String nome, int capienzaEdificio)
@@ -31,6 +34,9 @@ public class Main {
         E1.addAula(a1);
 
 
+
         System.out.println(E1.toString());
+
+
     }
 }
