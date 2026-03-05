@@ -1,5 +1,7 @@
 package org.aletane04;
 import org.aletane04.*;
+import org.aletane04.buildings.Aula;
+import org.aletane04.buildings.Edificio;
 import org.aletane04.people.Persona;
 import org.aletane04.people.caratterizzazioni.docenza.*;
 import org.aletane04.people.caratterizzazioni.docenza.DocenteDiRuolo;
@@ -21,6 +23,14 @@ public class Main {
         Docente d2 = new Dottorando("Amedeo","Scorcioni",LocalDate.of(2009,1,1), "SCRNAMD20090101", "0612708848", "Università degli Studi del Sannio", 2000, "Ingegneria Elettronica");
         System.out.println(d2.toString());
 
+        Aula a1 = new Aula("H", 250);
+        //System.out.println(a1.toString());
 
+        //public Edificio(String id, String nome, int capienzaEdificio)
+        Edificio E1 = new Edificio("UNISABLD001", "E1", 1500);
+        E1.addAula(a1);
+
+
+        System.out.println(E1.toString());
     }
 }
