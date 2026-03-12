@@ -5,7 +5,7 @@ import org.aletane04.exceptions.EdificioVuotoException;
 import java.io.*;
 import java.util.*;
 
-public class Edificio
+public class Edificio implements Serializable
 {
     private String id;
     private String nome;
