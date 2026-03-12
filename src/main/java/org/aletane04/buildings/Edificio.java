@@ -2,6 +2,7 @@ package org.aletane04.buildings;
 import org.aletane04.exceptions.EdificioPienoException;
 import org.aletane04.exceptions.EdificioVuotoException;
 
+import java.io.*;
 import java.util.*;
 
 public class Edificio
@@ -81,6 +82,39 @@ public class Edificio
 
         return false;
     }
+
+    // PARTE DI I-O
+    public void salvaOBJ(String nomeFile)
+    {
+        try(ObjectOutputStream oos = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(nomeFile))))
+        {
+            oos.writeObject(this);
+        }
+        catch(IOException e)
+        {
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public Edificio leggi(String nomeFile)
+    {
+        Edificio e = null;
+        try(ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream(nomeFile))))
+        {
+            e = (Edificio) ois.readObject();
+        }
+        catch(IOException ex)
+        {
+            System.err.println(ex.getMessage());
+        }
+        catch(ClassNotFoundException ex)
+        {
+            System.err.println(ex.getMessage());
+        }
+        return e;
+    }
+
+
 
     public String toString()
     {

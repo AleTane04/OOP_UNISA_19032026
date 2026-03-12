@@ -33,6 +33,16 @@ public class Aula implements Comparable<Aula>
         return capienza;
     }
 
+    public int getPostiResidui()
+    {
+        return postiResidui;
+    }
+
+    public int getNumeroPersone()
+    {
+        return numeroPersone;
+    }
+
     public void setNome(String nome)
     {
         this.nome=nome;
